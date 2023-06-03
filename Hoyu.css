@@ -1,14 +1,5 @@
 /* Reset CSS */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-li {
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0;
   padding: 0;
 }
@@ -17,11 +8,11 @@ li {
 body {
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
+  margin: 0 10px; /* Add left and right margin */
 }
 
 /* Style the header section */
-header h1,
-header h2 {
+header h1, header h2 {
   color: yellow;
 }
 
@@ -30,16 +21,29 @@ header {
   background-size: cover;
   background-position: center;
   color: #fff;
-  padding: 35px;
+  padding: 40px;
   text-align: center;
 }
 
 /* Style the main section */
 .logo {
-  position: absolute;
-  top: -1px;
-  left: 4px;
-  width: 120px; /* Adjust the width as per your logo size */
+    position: absolute;
+    top: 9px;
+    left: 4px;
+    width: 120px; /* Adjust the width as per your logo size */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    position: static;
+    margin: 20px auto; /* Center the logo */
+  }
+}
+
+@media (min-width: 769px) {
+  .logo {
+    left: 46px; /* Adjust the left position as desired */
+  }
 }
 
 main {
@@ -126,30 +130,22 @@ footer {
   font-size: 24px;
 }
 
-/* Center the text on the background image */
-.header-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+/* Style the expand button */
+.expand-button {
+  display: inline-block;
+  background-color: #0072C6;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.header-text h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
+.expand-button i {
+  margin-right: 5px;
 }
 
-.header-text p {
-  font-size: 24px;
-  white-space: pre-wrap; /* Allow line breaks */
-}
-
-/* Center the logo at the top during mobile view */
-@media only screen and (max-width: 600px) {
-  .logo {
-    position: static;
-    display: block;
-    margin: 0 auto;
-  }
+.expand-button:hover {
+  background-color: #005ea8;
 }
